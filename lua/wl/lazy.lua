@@ -21,6 +21,6 @@ require("lazy").setup({
     -- import your plugins
     { import = "wl.plugins" },
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
+  install = { colorscheme = { "habamax" } },
   checker = { enabled = true },
 })
