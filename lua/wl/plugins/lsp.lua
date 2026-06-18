@@ -31,9 +31,11 @@ return {
     -- example calling setup directly for each LSP
     config = function()
       local capabilities = require('blink.cmp').get_lsp_capabilities()
-      local lspconfig = require('lspconfig')
 
-      lspconfig['lua_ls'].setup({ capabilities = capabilities })
+      -- local lspconfig = require('lspconfig')
+      -- lspconfig['lua_ls'].setup({ capabilities = capabilities })
+      vim.lsp.config("lua_ls", { capabilities = capabilities, })
+      vim.lsp.enable("lua_ls")
 
       -- Use LspAttach autocommand to only map the following keys
       -- after the language server attaches to the current buffer
