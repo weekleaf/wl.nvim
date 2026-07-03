@@ -6,7 +6,7 @@ return {
       {
         "<leader>tt",
         "<cmd>ToggleTerm direction=float<cr>",
-        mode = { "n", "t" },
+        mode = { "n" },
         desc = "Toggle float terminal",
       },
     },
