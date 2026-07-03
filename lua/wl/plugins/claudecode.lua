@@ -12,6 +12,8 @@ return {
       { "<leader>am", "<cmd>ClaudeCodeSelectModel<cr>", desc = "Select Claude model" },
       { "<leader>ab", "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current buffer" },
       { "<leader>as", "<cmd>ClaudeCodeSend<cr>", mode = "v", desc = "Send to Claude" },
+      -- bypass
+      { "<leader>bp", "<cmd>ClaudeCode --dangerously-skip-permissions<cr>", desc = "bypass" },
       {
         "<leader>as",
         "<cmd>ClaudeCodeTreeAdd<cr>",
