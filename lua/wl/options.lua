@@ -18,7 +18,7 @@ vim.o.relativenumber = true
 
 -- Mouse and mode display
 vim.o.mouse = 'a'
-vim.o.showmode = true
+vim.o.showmode = false
 
 -- Clipboard (scheduled to avoid startup delay)
 vim.schedule(function()
@@ -41,7 +41,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- UI
-vim.o.signcolumn = 'yes'
+vim.o.signcolumn = 'yes:2'
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 vim.o.splitright = true

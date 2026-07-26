@@ -2,7 +2,12 @@ return {
   {
     "williamboman/mason.nvim",
     opts = {
-      ensure_installed = {},
+      ensure_installed = {
+        "lua-language-server",
+        "rust-analyzer",
+        "pyright",
+        "clangd",
+      },
     },
     opts_extend = { "ensure_installed" },
     config = function(_, opts)
@@ -28,14 +33,20 @@ return {
     'neovim/nvim-lspconfig',
     dependencies = { 'saghen/blink.cmp' },
 
-    -- example calling setup directly for each LSP
     config = function()
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-      -- local lspconfig = require('lspconfig')
-      -- lspconfig['lua_ls'].setup({ capabilities = capabilities })
-      vim.lsp.config("lua_ls", { capabilities = capabilities, })
-      vim.lsp.enable("lua_ls")
+      local servers = {
+        "lua_ls",
+        "rust_analyzer",
+        "pyright",
+        "clangd",
+      }
+
+      for _, server in ipairs(servers) do
+        vim.lsp.config(server, { capabilities = capabilities })
+        vim.lsp.enable(server)
+      end
 
       -- Use LspAttach autocommand to only map the following keys
       -- after the language server attaches to the current buffer

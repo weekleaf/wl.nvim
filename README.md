@@ -8,7 +8,7 @@
 
 ## Keymaps
 
-> Leader = `Space`. Modes: `n` normal, `i` insert, `v` visual, `x` visual-block, `o` operator-pending, `c` command-line, `t` terminal.
+> Leader = `Space`. Modes: `n` normal, `i` insert, `v` visual/select, `x` visual, `o` operator-pending, `c` command-line, `t` terminal.
 
 ### General
 
@@ -46,6 +46,27 @@
 | `o` | tree | Open file |
 | `<C-e>` | tree | Close window |
 
+### Snacks Dashboard
+
+| Key | Mode | Action |
+| --- | --- | --- |
+| `f` | dashboard | Find file with Telescope |
+| `n` | dashboard | Create a new buffer and enter insert mode |
+| `g` | dashboard | Find text with Telescope live grep |
+| `r` | dashboard | Open a recent file |
+| `c` | dashboard | Find a file in the Neovim config directory |
+| `L` | dashboard | Open Lazy.nvim |
+| `q` | dashboard | Quit Neovim |
+
+### Snacks Scope
+
+| Key | Mode | Action |
+| --- | --- | --- |
+| `[i` | n | Jump to the top edge of the current scope |
+| `]i` | n | Jump to the bottom edge of the current scope |
+| `ii` | o/x | Inner-scope text object, for example `dii`, `cii`, or `vii` |
+| `ai` | o/x | Full-scope text object, for example `dai`, `cai`, or `vai` |
+
 ### Flash (motion)
 
 | Key | Mode | Action |
@@ -56,6 +77,43 @@
 | `R` | o/x | Treesitter search |
 | `<C-s>` | c | Toggle Flash search |
 
+### Gitsigns
+
+| Key | Mode | Action |
+| --- | --- | --- |
+| `]c` | n | Jump to the next Git hunk (native next change in diff mode) |
+| `[c` | n | Jump to the previous Git hunk (native previous change in diff mode) |
+| `<leader>hs` | n | Stage the current hunk (unstage when used on a staged sign) |
+| `<leader>hs` | v | Stage the selected lines |
+| `<leader>hr` | n | Reset the current hunk |
+| `<leader>hr` | v | Reset the selected lines |
+| `<leader>hS` | n | Stage every hunk in the current buffer |
+| `<leader>hu` | n | Stage/unstage the current hunk (same configured action as `<leader>hs`) |
+| `<leader>hR` | n | Reset every hunk in the current buffer |
+| `<leader>hp` | n | Preview the current hunk in a floating window |
+| `<leader>hb` | n | Show blame for the current line |
+| `<leader>hd` | n | Diff the current file against the Git index |
+| `<leader>hD` | n | Diff the current file against `HEAD` |
+| `<leader>tb` | n | Toggle current-line blame |
+| `<leader>tD` | n | Preview the current hunk inline |
+
+> `<leader>hr` and `<leader>hR` discard unstaged changes in their target range.
+
+### Neogit
+
+| Key | Mode | Action |
+| --- | --- | --- |
+| `<leader>ng` | n | Open the Neogit status UI |
+| `j` / `k` | Neogit | Move between status items |
+| `<Tab>` | Neogit | Expand or collapse the item at the cursor |
+| `s` / `S` / `<C-s>` | Neogit | Stage item / all unstaged / everything |
+| `u` / `U` | Neogit | Unstage item / everything staged |
+| `x` | Neogit | Discard the item at the cursor after confirmation |
+| `c` | Neogit | Open the commit popup |
+| `p` / `P` | Neogit | Open the pull / push popup |
+| `<CR>` | Neogit | Open the file at the cursor |
+| `q` | Neogit | Close the status UI |
+
 ### LSP & Diagnostics
 
 | Key | Mode | Action |
@@ -63,16 +121,26 @@
 | `K` | n | Hover documentation |
 | `<leader>d` | n | Show diagnostic (float) |
 | `<leader>q` | n | Diagnostics → location list |
+| `]d` / `[d` | n | Jump to the next / previous diagnostic |
+| `grn` | n | Rename symbol |
+| `gra` | n/x | Show code actions |
+| `grr` | n | Find references |
+| `gri` | n | Go to implementation |
+| `grt` | n | Go to type definition |
+| `gO` | n | List document symbols |
+| `<C-]>` | n | Go to definition through the LSP-backed Tag function |
 
 ### Completion (blink.cmp, `default` preset)
 
 | Key | Mode | Action |
 | --- | --- | --- |
 | `<C-space>` | i | Open menu / show docs |
-| `<C-n>` / `<C-p>` | i | Select next / previous |
+| `<C-n>` / `<C-p>` | i | Select next / previous item |
+| `<Down>` / `<Up>` | i | Select next / previous item |
 | `<C-y>` | i | Accept |
 | `<C-e>` | i | Hide menu |
-| `<C-k>` | i | Toggle signature help |
+| `<C-b>` / `<C-f>` | i | Scroll documentation up / down |
+| `<C-k>` | i | Signature help (falls back while signature help is disabled) |
 
 ### Supermaven (inline suggestions)
 
