@@ -27,7 +27,7 @@
 
 | Key | Mode | Action |
 | --- | --- | --- |
-| `<leader>tt` | n | Toggle floating terminal |
+| `<C-s>` | n, t | Toggle floating terminal |
 
 ### Telescope (search)
 

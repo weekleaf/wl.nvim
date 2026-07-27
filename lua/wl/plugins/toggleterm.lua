@@ -4,9 +4,9 @@ return {
     version = "*",
     keys = {
       {
-        "<leader>tt",
+        "<C-s>",
         "<cmd>ToggleTerm direction=float<cr>",
-        mode = { "n" },
+        mode = { "n", "t" },
         desc = "Toggle float terminal",
       },
     },
@@ -14,7 +14,7 @@ return {
       direction = "float",
       close_on_exit = false,
       float_opts = {
-        border = "curved",
+        border = "rounded",
         width = function()
           return math.floor(vim.o.columns * 0.8)
         end,
