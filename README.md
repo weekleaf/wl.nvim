@@ -21,6 +21,9 @@
 | `tn` | n | New tab |
 | `tj` | n | Next tab |
 | `tk` | n | Previous tab |
+| `tc` | n | Close tab |
+| `gt` / `gT` | n | Next / previous tab (Neovim built-in) |
+| `{count}gt` | n | Go to tab number `{count}` (Neovim built-in) |
 | `<leader>?` | n | Show buffer-local keymaps (which-key) |
 
 ### Terminal (toggleterm)
@@ -154,7 +157,7 @@
 
 | Key | Mode | Action |
 | --- | --- | --- |
-| `<leader>ac` | n | Toggle Claude |
+| `<leader>ac` | n | Toggle Claude (with `--dangerously-skip-permissions`) |
 | `<leader>af` | n | Focus Claude |
 | `<leader>ar` | n | Resume Claude |
 | `<leader>aC` | n | Continue Claude |
@@ -164,4 +167,3 @@
 | `<leader>as` | tree | Add file to Claude |
 | `<leader>aa` | n | Accept diff |
 | `<leader>ad` | n | Deny diff |
-| `<leader>bp` | n | Launch with `--dangerously-skip-permissions` (bypass) |
